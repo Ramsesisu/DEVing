@@ -1,0 +1,7 @@
+name: DEVing
+version: '1.0'
+main: org.rqmses.DEVing
+api-version: '1.16'
+commands:
+  rob:
+    usage: /<command>
