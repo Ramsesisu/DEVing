@@ -37,6 +37,10 @@ public class RobCommand implements CommandExecutor {
                         }
                     }
                     if (biz != null) {
+                        // Nachricht an alle Frakmitglieder
+                        Bukkit.getServer().broadcast(Component.text(player.getName() + " beginnt die " + biz + "-Kasse aufzubrechen."));
+                        // dazu passendes /me für alle Spieler in der Nähe
+
                         LockpickListener.c = 1;
                         LockpickListener.a = 1;
                         LockpickListener.f = 0;
@@ -48,7 +52,7 @@ public class RobCommand implements CommandExecutor {
                             if (Objects.requireNonNull(player).getOpenInventory().title().equals(Component.text("Kasse"))) {
                                 player.closeInventory();
 
-                                // Nachricht an alle Frakmitglieder (formattieren)
+                                // Nachricht(en) an alle Frakmitglieder (formatieren)
                                 if (LockpickListener.value > 0) {
                                     Bukkit.getServer().broadcast(Component.text(player.getName() + " hat erfolgreich " + LockpickListener.value + "€ aus der Kasse gestohlen."));
                                     // Dem Spieler [LockpickListener.value] zum Bargeld hinzufügen

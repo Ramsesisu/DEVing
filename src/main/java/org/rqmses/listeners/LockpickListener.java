@@ -60,7 +60,7 @@ public class LockpickListener implements Listener {
             } else if (display.endsWith("€")) {
                 int v = Integer.parseInt(display.substring(0, display.lastIndexOf("€")));
                 value += v;
-                // Passend formattieren
+                // Passend formatieren
                 player.sendMessage("Du hast " + v + "€ aus der Kasse genommen.");
 
                 player.getInventory().close();
